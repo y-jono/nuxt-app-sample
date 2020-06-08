@@ -58,7 +58,14 @@ export default {
     /*
     ** You can extend webpack config here
     */
-    // extend (config, ctx) {
-    // }
+    extend (config, {isDev, isClient}) {
+      if(!isDev) {
+        // NuxtはDefaultで / で出力してしまう。WKWebViewはそれでは読めない。そこで、読み込めるように ./ に変更する
+        config.output.publicPath = "./_nuxt/"
+      }
+    }
+  },
+  generate: {
+    subFolders: false
   }
 }
