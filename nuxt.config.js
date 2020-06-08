@@ -40,7 +40,7 @@ export default {
   */
   modules: [
     // Doc: https://buefy.github.io/#/documentation
-    'nuxt-buefy',
+    ['nuxt-buefy', {materialDesignIcons: false}],
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios'
   ],
@@ -57,7 +57,7 @@ export default {
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
-    }
+    // extend (config, ctx) {
+    // }
   }
 }
