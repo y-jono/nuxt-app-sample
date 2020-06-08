@@ -67,5 +67,15 @@ export default {
   },
   generate: {
     subFolders: false
+  },
+  router: {
+    extendRoutes (routes, resolve) {
+      // 全てのルートにマッチしなかった場合、エラーページを出すのはやめ、 index.vue に戻してあげる
+      routes.push({
+        name: "custom",
+        path: '*',
+        component: resolve(__dirname, 'pages/index.vue')
+      })
+    }
   }
 }
