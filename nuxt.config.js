@@ -59,7 +59,7 @@ export default {
     extend (config, {isDev, isClient}) {
       if(!isDev) {
         // NuxtはDefaultで / で出力してしまう。WKWebViewはそれでは読めない。そこで、読み込めるように ./ に変更する
-        config.output.publicPath = "./_nuxt/"
+        config.output.publicPath = "~/_nuxt/"
       }
     }
   },
@@ -75,5 +75,8 @@ export default {
         component: resolve(__dirname, 'pages/index.vue')
       })
     }
+  },
+  transition: {
+    mode: ''
   }
 }

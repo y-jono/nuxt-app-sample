@@ -66,6 +66,11 @@ export default {
           title: 'Inspire',
           icon: 'lightbulb',
           to: { name: 'inspire' }
+        },
+        {
+          title: 'Hoge',
+          icon: 'lightbulb',
+          to: { name: 'hoge' }
         }
       ]
     }
