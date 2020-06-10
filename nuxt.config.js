@@ -59,7 +59,7 @@ export default {
     extend (config, {isDev, isClient}) {
       if(!isDev) {
         // NuxtはDefaultで / で出力してしまう。WKWebViewはそれでは読めない。そこで、読み込めるように ./ に変更する
-        config.output.publicPath = "~/_nuxt/"
+        config.output.publicPath = "./_nuxt/"
       }
     }
   },
@@ -67,6 +67,17 @@ export default {
     subFolders: false
   },
   router: {
+    // WebView側アプリとして単体で動かすためには、サーバーに頼らないRouting手段を取らねばならない。
+    // Nuxt.js は標準で historyモード(HTML5 history APIを使うやつ)。
+    // これで npm run build すると, Nuxt.jsアプリはSPAモードにもかかわらず、
+    // 各ページ(pages/**/*.vue)毎に .html を出力してしまう。
+    // そこで、 router mode を Vue.js 標準の hashモードにすると、
+    // ブラウザが認識するページ遷移が起こらなくなる。
+    // location.hashによる擬似ページ遷移はNuxt.jsにページ遷移として認識されないせいか、
+    // SSRが効かなくなり、その結果トップページ(/index.html)だけが生成される。
+    // WebViewに組み込むにはこのほうが都合が良い。なので必ず hash モードに設定すること。
+    // 参考: https://www.slideshare.net/ushiboy/spa-76170499
+    mode: "hash",
     extendRoutes (routes, resolve) {
       // 全てのルートにマッチしなかった場合、エラーページを出すのはやめ、 index.vue に戻してあげる
       routes.push({
