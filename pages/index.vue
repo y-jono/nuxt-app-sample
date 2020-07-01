@@ -45,15 +45,8 @@ import Card from '~/components/Card'
 
 export default {
   name: 'HomePage',
-
-  transition (to, from) {
-    console.log(to)
-    
-    if (from && (from.name === 'index'))
-      return 'slide-prev'
-    else
-      return 'slide-next'
-  },
+  
+  transition: 'slide-prev',
 
   components: {
     Card

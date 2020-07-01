@@ -13,3 +13,17 @@
     </h3>
   </section>
 </template>
+
+<script>
+import Card from '~/components/Card'
+
+export default {
+  name: 'InspirePage',
+
+  transition: 'slide-next',
+
+  components: {
+    Card
+  }
+}
+</script>

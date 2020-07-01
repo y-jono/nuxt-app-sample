@@ -87,7 +87,8 @@ export default {
       })
     }
   },
-  transition: {
+  pageTransition: {
+    name: 'slide-prev',
     mode: ''
   }
 }

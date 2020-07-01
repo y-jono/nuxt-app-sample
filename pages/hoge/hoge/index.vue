@@ -1,6 +1,5 @@
-<template lang="pug">
-section .hoge
-    a .fuga hige
+<template>  
+  <section class="hoge"><a class="fuga">hige</a></section>
 </template>
 
 <style lang="scss">

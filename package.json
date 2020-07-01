@@ -13,10 +13,11 @@
     "test": "jest"
   },
   "dependencies": {
-    "nuxt": "^2.0.0",
     "@nuxt/typescript-runtime": "^0.4.0",
+    "@nuxtjs/axios": "^5.3.6",
+    "nuxt": "^2.0.0",
     "nuxt-buefy": "^0.3.2",
-    "@nuxtjs/axios": "^5.3.6"
+    "nuxt-property-decorator": "^2.7.2"
   },
   "devDependencies": {
     "@mdi/font": "^5.3.45",
