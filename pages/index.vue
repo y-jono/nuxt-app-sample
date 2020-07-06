@@ -36,6 +36,7 @@
       >
         No other internal dependency
       </card>
+      {{$hoge}}
     </div>
   </section>
 </template>
@@ -50,6 +51,10 @@ export default {
 
   components: {
     Card
+  },
+
+  mounted () {
+    this.$myInjectedFunction('test')
   }
 }
 </script>
